@@ -8,7 +8,7 @@ import org.hibernate.SessionFactory;
 
 public class Maintest {
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws Exception {
         FirstChild firstChild = new FirstChild();
         firstChild.setName("First Child");
         firstChild.setType("C1");
@@ -17,7 +17,7 @@ public class Maintest {
         secondChild.setName("Second Child");
         secondChild.setType("C2");
         secondChild.setCity("BLR");
-        SessionFactory sessionFactory=DBConnectionUtils.getSessionFactory();
+        SessionFactory sessionFactory=DBConnectionUtils.getSessionFactoryFromProperties();
         Session session=sessionFactory.openSession();
         session.getTransaction().begin();
         int id = (int) session.save(firstChild);

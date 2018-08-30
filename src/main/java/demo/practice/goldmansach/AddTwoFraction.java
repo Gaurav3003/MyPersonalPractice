@@ -1,4 +1,8 @@
 package demo.practice.goldmansach;
+
+import java.util.HashSet;
+import java.util.Set;
+
 /*
 Add two fraction a/b and c/d and print answer in simplest form.
 
@@ -20,6 +24,7 @@ public class AddTwoFraction {
         int arr2[]={2,4};
         int sum[] = addFraction(arr1,arr2);
         System.out.println("{"+sum[0]+", "+sum[1]+"}");
+        Set set = new HashSet();
     }
 
     private static int[] addFraction(int arr1[],int arr2[]){

@@ -76,10 +76,10 @@ public class SingleLinkedList {
     public  void show(){
         Node node = headNode;
         while(node.getNextNode()!=null){
-            System.out.println(node.getValue());
+            System.out.print(node.getValue()+"\t");
             node = node.getNextNode();
         }
-        System.out.println(node.getValue());
+        System.out.print(node.getValue()+"\t");
     }
 
     /*
