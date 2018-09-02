@@ -7,7 +7,6 @@ import org.hibernate.service.ServiceRegistry;
 import org.hibernate.service.ServiceRegistryBuilder;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.net.URI;
@@ -22,7 +21,10 @@ public class DBConnectionUtils {
 
     private static Configuration configuration;
     private static SessionFactory sessionFactory;
-
+    /*
+        Java based configuration.
+        Adding manually everything
+     */
     public static SessionFactory getSessionFactory(){
         if(sessionFactory==null){
             if(configuration==null){
@@ -47,6 +49,11 @@ public class DBConnectionUtils {
         }
         return  sessionFactory;
     }
+    /*
+        Java Based Configuration
+        loading data from property file
+        adding annotated classes dynamically
+     */
     public static SessionFactory getSessionFactoryFromProperties()throws Exception{
         if(sessionFactory==null){
             if(configuration==null){
@@ -65,6 +72,9 @@ public class DBConnectionUtils {
         }
         return  sessionFactory;
     }
+    /*
+        getting file name from the package
+     */
     public static List<Class<?>> getEntityClassesFromPackage(String packageName) throws ClassNotFoundException, IOException, URISyntaxException {
         List<String> classNames = getClassNamesFromPackage(packageName);
         List<Class<?>> classes = new ArrayList<>();
@@ -78,6 +88,7 @@ public class DBConnectionUtils {
                 }
             }
         }
+        System.out.println(classes);
         return classes;
     }
     public static ArrayList<String> getClassNamesFromPackage(String packageName) throws IOException, URISyntaxException, ClassNotFoundException {
