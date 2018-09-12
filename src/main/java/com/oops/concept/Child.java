@@ -14,4 +14,9 @@ public class Child extends Parent {
         System.out.println("Child : individual method ");
     }
 
+    public Child getParentDetails(){
+        System.out.println("Child get details");
+        return new Child();
+    }
+
 }

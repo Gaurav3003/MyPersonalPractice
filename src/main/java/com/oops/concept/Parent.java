@@ -14,4 +14,8 @@ public class Parent {
     public void print(){
         System.out.println("Parent : individual method ");
     }
+    public Parent getParentDetails(){
+        System.out.println("Parent get details");
+        return new Parent();
+    }
 }

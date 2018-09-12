@@ -3,11 +3,11 @@ package demo.practice.hackerrank;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Scanner;
+import java.util.*;
 
 public class RotateArray {
     public static void main(String args[]){
-        int arr[]= {1,2,3,4,5,6,7,8};
+        int arr[]= {1,2,3,4,5,};
         int noOfRotation = 4;
         arr = rotateArrayByLeft(arr,noOfRotation);
         for(int i = 0;i<arr.length;i++){
@@ -68,4 +68,6 @@ public class RotateArray {
 
         scanner.close();
     }
+
+
 }
