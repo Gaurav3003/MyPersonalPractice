@@ -1,23 +1,26 @@
 package com.oops.concept;
 
+import java.awt.*;
+import java.util.*;
+
 public class Test {
     public static void main(String args[]){
-        Parent p = new Child();
-        p.print();
-        p.getParentDetails();
-        //p.display(); will not be called as present in child
-        Child c = new Child();
-        c.print();
-        c.display();
+       HashMap<String,Integer> map  =new HashMap<>();
+       map.put("jda",1);
+       map.put("ban",1);
+       System.out.println(map);
+       map.clear();
+    }
+}
 
-        Parent p1 = new Parent();
-        p1.print();
-
-        //p1 = c;
-        p1.print();
-
-        c = (Child) p;
-        c.show(1,2);
-
+class Item implements Comparable{
+    int price;
+    int id;
+    @Override
+    public int compareTo(Object o) {
+        if(o instanceof Item){
+            return this.price - ((Item) o).price;
+        }
+        return 0;
     }
 }

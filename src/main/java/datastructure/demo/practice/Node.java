@@ -1,8 +1,8 @@
 package datastructure.demo.practice;
 
 public class Node {
-    private int value;
-    private Node nextNode;
+    public int value;
+    public Node nextNode;
 
     public int getValue() {
         return value;

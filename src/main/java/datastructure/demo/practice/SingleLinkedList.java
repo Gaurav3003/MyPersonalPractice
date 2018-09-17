@@ -233,5 +233,63 @@ public class SingleLinkedList {
     }
 
 
+    public Node removeDuplicates(Node head){
+        Node currentNode = head;
+        Node tempNode;
+        if(head==null){
+            return null;
+        }
+        while(currentNode.getNextNode()!=null){
+            if(currentNode.getValue() == currentNode.getNextNode().getValue()){
+                tempNode = currentNode.getNextNode().getNextNode();
+                currentNode.setNextNode(tempNode);
+            }else{
+                currentNode = currentNode.getNextNode();
+            }
+        }
+
+        return head;
+    }
+
+    public Node removeAllDuplicates(Node head){
+        Node dummy = new Node();
+
+        /* dummy node points to the original head*/
+        dummy.nextNode = head;
+        Node prev = dummy;
+        Node current = head;
+
+        while (current != null)
+        {
+            /* Until the current and previous values
+               are same, keep updating current */
+            while (current.nextNode != null &&
+                    prev.nextNode.value == current.nextNode.value)
+                current = current.nextNode;
+
+            /* if current has unique value i.e current
+                is not updated, Move the prev pointer
+                to next node*/
+            if (prev.nextNode == current) {
+                prev = prev.nextNode;
+            }
+
+            /* when current is updated to the last
+               duplicate value of that segment, make
+               prev the next of current*/
+            else {
+                prev.nextNode = current.nextNode;
+            }
+            current = current.nextNode;
+        }
+
+        /* update original head to the next of dummy
+           node */
+        head = dummy.nextNode;
+        return head;
+
+    }
+
+
 
 }

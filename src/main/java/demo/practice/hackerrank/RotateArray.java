@@ -14,14 +14,12 @@ public class RotateArray {
             System.out.print(arr[i]+" ");
         }
     }
-
     private static int[] rotateArrayByLeft(int arr[], int noOfRitation){
         for(int i = 0;i<noOfRitation;i++){
             arr = rotateArrayByLeftOneStep(arr);
         }
         return arr;
     }
-
     private static int[] rotateArrayByLeftOneStep(int[] arr) {
         int temp = arr[0];
         for(int j = 0;j<arr.length-1;j++){
@@ -61,13 +59,8 @@ public class RotateArray {
                 bufferedWriter.write(" ");
             }
         }
-
         bufferedWriter.newLine();
-
         bufferedWriter.close();
-
         scanner.close();
     }
-
-
 }

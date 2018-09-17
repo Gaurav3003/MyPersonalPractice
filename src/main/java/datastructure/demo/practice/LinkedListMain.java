@@ -26,7 +26,25 @@ public class LinkedListMain {
         System.out.print(linkedList.detectLoopInLinkedList(linkedList.headNode));*/
 
 
-        addTwoNumberUsingLinkedList(123,4567);
+        //addTwoNumberUsingLinkedList(123,4567);
+
+        SingleLinkedList linkedList = new SingleLinkedList();
+        linkedList.insertNodeAtLast(1);
+        linkedList.insertNodeAtLast(1);
+        linkedList.insertNodeAtLast(2);
+        linkedList.insertNodeAtLast(3);
+        linkedList.insertNodeAtLast(3);
+        linkedList.insertNodeAtLast(3);
+        linkedList.insertNodeAtLast(4);
+        linkedList.insertNodeAtLast(5);
+        linkedList.insertNodeAtLast(5);
+        linkedList.show();
+       /* System.out.println("\nafter removing");
+        linkedList.removeDuplicates(linkedList.headNode);
+        linkedList.show();*/
+        System.out.println("\nafter removing all");
+        linkedList.headNode=linkedList.removeAllDuplicates(linkedList.headNode);
+        linkedList.show();
 
     }
 
