@@ -12,7 +12,7 @@ public class AlphabetsCount {
             word = in.readLine();
         }*/
 
-        printCount(word);
+        printCharCount(word);
     }
 
     private static void printCount(String word) {
@@ -25,6 +25,21 @@ public class AlphabetsCount {
 
             for(int i = 0;i<alphabets.length;i++){
                 System.out.println((char)(i+'a')+"\t"+alphabets[i]);
+            }
+
+        }
+    }
+
+    private static void printCharCount(String word){
+        if(null!=word && !word.isEmpty()){
+            int[] alphabets = new int[256];
+            //word = word.toLowerCase().replace(" ","");
+            for (int i = 0; i < word.length(); i++) {
+                alphabets[word.charAt(i) - 'a']++;
+            }
+
+            for(int i = 0;i<alphabets.length;i++){
+                System.out.println((char)(i)+"\t"+alphabets[i]);
             }
 
         }

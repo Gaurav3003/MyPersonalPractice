@@ -55,14 +55,13 @@ class LinkedList{
 
     public void removeDuplicates(){
         Node currentNode = head;
-        Node tempNode;
+
         if(head==null){
             return;
         }
         while(currentNode.next!=null){
             if(currentNode.data==currentNode.next.data){
-                tempNode = currentNode.next.next;
-                currentNode.next=tempNode;
+                currentNode.next = currentNode.next.next;
             }else{
                 currentNode = currentNode.next;
             }
