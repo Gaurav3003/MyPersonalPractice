@@ -42,6 +42,27 @@ public class SiblingNodesProblem {
         return(a || b || c);
     }
 
+    public static int level(Node node, Node ptr, int level){
+        if(node==null){
+            return 0;
+        }
+        if(node==ptr){
+            return level;
+        }
+        int l = level(node.left,ptr,level+1);
+        if(l!=0){
+            return l;
+        }
+        return level(node.right,ptr,level+1);
+    }
+
+    public static boolean isCousin(Node node, Node a, Node b){
+        int l1 = level(node,a,1);
+        int l2 = level(node,b,1);
+        return ((l1==l2) && !isSiblings(node,a,b));
+
+    }
+
     public static void main(String []args){
         SiblingNodesProblem tree = new SiblingNodesProblem();
         tree.root = new Node(1);
