@@ -19,7 +19,6 @@ public class AlphabetsCount {
         if(null!=word && !word.isEmpty()){
             int[] alphabets = new int[26];
             word = word.toLowerCase().replace(" ","");
-
             for (int i = 0; i < word.length(); i++) {
                 alphabets[word.charAt(i) - 'a']++;
             }
