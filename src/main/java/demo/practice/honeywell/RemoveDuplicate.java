@@ -45,6 +45,10 @@ class LinkedList{
         head = dummyNode.next;
     }
     public  void show(){
+        if(head==null){
+            System.out.print("empty");
+            return;
+        }
        Node node = head;
         while(node.next!=null){
             System.out.print(node.data+"\t");
@@ -72,15 +76,18 @@ public class RemoveDuplicate {
     public static void main(String args[]){
         LinkedList list = new LinkedList();
         list.insertAtLast(1);
+        /*list.insertAtLast(1);
         list.insertAtLast(1);
-        list.insertAtLast(2);
-        list.insertAtLast(3);
-        list.insertAtLast(3);
+        list.insertAtLast(1);*/
+        /*list.insertAtLast();
+        list.insertAtLast(4);
         list.insertAtLast(4);
         list.insertAtLast(5);
-        list.insertAtLast(6);
+        list.insertAtLast(5);
+        list.insertAtLast(7);*/
+
         list.show();
-        list.removeDuplicates();
+        list.removeAllDuplicates();
         System.out.println();
         list.show();
     }
